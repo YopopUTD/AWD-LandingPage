@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-image: url(https://rmn.ph/wp-content/uploads/2019/11/ITLOG-EGG.jpg);
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+
+}
+.letters {
+    perspective: 100px;
+    font-family: cursive;
+    color: rgb(255, 187, 0);
+
+    .letter{
+        overflow: hidden;
+        cursor: pointer;
+        display: inline-block;
+        user-select: none;
+        line-height: 0.8;
+        font-size: 5rem;
+
+        &.active {
+            animation: jump 1s ease-in-out;
+            transform-origin: bottom left;
+        }
+    }
+
+}
+
+@keyframes jump {
+    0% {
+        transform: translate(0, 0) rotate(100deg);
+    }
+    25% {
+        transform: scale(2) translate(0, -150px);
+    }
+    75% {
+        transform: scale(1.1, 1.1) translate(0, 200px);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}

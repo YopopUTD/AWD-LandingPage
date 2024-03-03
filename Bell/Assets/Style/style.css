@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(90deg, black, white 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.button{
+    border: none;
+    outline: none;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 1rem;
+    padding: 0.8rem 3rem;
+    border-radius: 50px;
+    text-align: center;
+    z-index: 1;
+    transition: .5s;
+
+    &.active{
+      transform: translate(5%, 5%);
+        
+    }
+}
+.notification{
+    width: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    position: relative;
+    color: transparent;
+
+    &::after{
+        min-width: 15px;
+        min-height: 15px;
+        content: attr(data-count);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        background-color: black;
+        border-radius: 50%;
+        position: absolute;
+        top: -4px;
+        right: 7px;
+        transition: 0.3s;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    &::before{
+        content:'\f0f3';
+        font-family: 'Font Awesome 5 Free';
+        display: block;
+        color: black;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    &.count::after{
+        opacity: 1;
+        transform: scale(1);
+    }
+    &.notify::before{
+        animation: dingdong 1s linear infinite;
+    }
+}
+
+@keyframes dingdong{
+    0%{
+        transform: translate(-50%, -50%) rotate(0deg)
+    }
+    25%{
+        transform: translate(-50%, -50%) rotate(-10deg)
+    }
+    50%{
+        transform: translate(-50%, -50%) rotate(0deg)
+    } 
+    75%{
+        transform: translate(-50%, -50%) rotate(10deg)
+    } 
+    100%{
+        transform: translate(-50%, -50%) rotate(0deg)
+    }  
+}

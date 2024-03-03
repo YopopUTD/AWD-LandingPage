@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Background Animation",
+        "description": "Activity number 1",
+        "link": "./Hover"
+    },
+    {
+        "title": "Jumping Letters",
+        "description": "Activity number 2",
+        "link": "./Jumping"
+    },
+    {
+        "title": "Bell Notification",
+        "description": "Activity number 3",
+        "link": "./Bell"
+    },
+    {
+        "title": "Scrollbar Indicator",
+        "description": "Activity number 4",
+        "link": "./Indicator"
+    },
+    {
+        "title": "Seatwork",
+        "description": "Animation Activity",
+        "link": "./Seatwork"
+    }
+]
